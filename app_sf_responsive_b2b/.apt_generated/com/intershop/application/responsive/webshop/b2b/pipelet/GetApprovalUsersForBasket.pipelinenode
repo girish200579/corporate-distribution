@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pipeline:pipeline-node name="GetApprovalUsersForBasket" xmlns:pipeline="http://www.intershop.com/pipeline">
+    <pipeline:class-name>com.intershop.application.responsive.webshop.b2b.pipelet.GetApprovalUsersForBasket</pipeline:class-name>
+    <pipeline:transactional>false</pipeline:transactional>
+    <pipeline:type>Node</pipeline:type>
+    <pipeline:input-connector name="execute">
+        <pipeline:class-name>com.intershop.application.responsive.webshop.b2b.pipelet.GetApprovalUsersForBasket$Input</pipeline:class-name>
+        <pipeline:parameter name="BasketBO">
+            <pipeline:type-literal>com.intershop.component.basket.capi.BasketBO</pipeline:type-literal>
+            <pipeline:optional>false</pipeline:optional>
+        </pipeline:parameter>
+    </pipeline:input-connector>
+    <pipeline:output-connector name="next">
+        <pipeline:attribute-name>next</pipeline:attribute-name>
+        <pipeline:class-name>com.intershop.application.responsive.webshop.b2b.pipelet.GetApprovalUsersForBasket$Next</pipeline:class-name>
+        <pipeline:parameter name="ApprovalUsers">
+            <pipeline:type-literal>java.util.Collection</pipeline:type-literal>
+            <pipeline:optional>false</pipeline:optional>
+        </pipeline:parameter>
+    </pipeline:output-connector>
+</pipeline:pipeline-node>

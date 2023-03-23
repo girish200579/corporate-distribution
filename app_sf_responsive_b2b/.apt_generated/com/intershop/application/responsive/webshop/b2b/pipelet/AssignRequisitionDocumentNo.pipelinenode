@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pipeline:pipeline-node name="AssignRequisitionDocumentNo" xmlns:pipeline="http://www.intershop.com/pipeline">
+    <pipeline:description>Gets the next available requisition document number and assigns it to a basket.
+ 
+ @author Martin Bonev</pipeline:description>
+    <pipeline:class-name>com.intershop.application.responsive.webshop.b2b.pipelet.AssignRequisitionDocumentNo</pipeline:class-name>
+    <pipeline:transactional>true</pipeline:transactional>
+    <pipeline:type>Node</pipeline:type>
+    <pipeline:input-connector name="setRequisitionDocumentNo">
+        <pipeline:class-name>com.intershop.application.responsive.webshop.b2b.pipelet.AssignRequisitionDocumentNo$Input</pipeline:class-name>
+        <pipeline:parameter name="BasketBO">
+            <pipeline:type-literal>com.intershop.component.basket.capi.BasketBO</pipeline:type-literal>
+            <pipeline:optional>false</pipeline:optional>
+        </pipeline:parameter>
+    </pipeline:input-connector>
+    <pipeline:output-connector name="next">
+        <pipeline:attribute-name>next</pipeline:attribute-name>
+        <pipeline:class-name>com.intershop.application.responsive.webshop.b2b.pipelet.AssignRequisitionDocumentNo$Next</pipeline:class-name>
+    </pipeline:output-connector>
+</pipeline:pipeline-node>

@@ -1,0 +1,2 @@
+com.intershop.application.responsive.webshop.b2b.pipelet.AssignRequisitionDocumentNo
+com.intershop.application.responsive.webshop.b2b.pipelet.GetApprovalUsersForBasket

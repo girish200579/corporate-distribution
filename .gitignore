@@ -3,19 +3,32 @@
 *.iml
 out
 gen
+*.bak
+*.log
 
 # Eclipse project files
-.classpath
-.project
-.settings
+**/bin/
+**/.settings/
+**/.classpath
+**/.project
+
+# editor backup files
+**~
 
 # Gradle Files
-.gradle
-/build
+**/build/
+**/.gradle
 
+# Intershop build directories
+**/target/
 # Ignore Gradle GUI config
 gradle-app.setting
+ 
+# generated css
+app_sf_responsive*/staticfiles/cartridge/static/default/css/themes.css
+app_sf_responsive*/staticfiles/cartridge/static/default/css/themes.css.map
+app_sf_responsive*/staticfiles/cartridge/static/default/css/
+
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
-/bin/

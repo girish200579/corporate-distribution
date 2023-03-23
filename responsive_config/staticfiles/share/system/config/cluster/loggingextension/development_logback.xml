@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<included>
+
+    <!-- Dev log appender - just a basic log for all aps to figure out what is going on around-->
+    <appender name="DEV_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <File>${intershop.logfile.Directory}/dev-log-${intershop.logfile.NamePostfix}.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <FileNamePattern>${intershop.logfile.Directory}/dev-log-${intershop.logfile.NamePostfix}-%d{yyyy-MM-dd}.%i.log.zip</FileNamePattern>
+            <maxFileSize>50MB</maxFileSize>
+            <maxHistory>25</maxHistory>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS zZ}] %-5level ${intershop.HostName} ${intershop.InstallationID} ${intershop.ServerName}
+          [%mdc{requestsite}] %logger [%marker] [%mdc{request.type}] [%mdc{session.id}] [%mdc{request.uuid}] &quot;%thread&quot; %msg %ex%n
+                </Pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+    <root>
+        <level value="INFO" />
+
+        <appender-ref ref="DEV_LOG" />
+    </root>
+
+</included>
